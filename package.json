@@ -3,22 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest"
   },
   "dependencies": {
+    "material-symbols": "^0.47.2",
     "next": "16.3.4",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "styled-components": "^6.5.3"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/styled-components": "^5.1.36",
+    "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
-    "typescript": "^5"
+    "glyphhanger": "^6.0.0",
+    "jsdom": "^30.0.1",
+    "typescript": "^5",
+    "vitest": "^2.1.9"
   }
 }

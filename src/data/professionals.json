@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Dra. Ana Martins",
+    "specialty": "Psicóloga",
+    "location": "Curitiba, Paraná",
+    "description": "Atendimento psicológico com abordagem acolhedora e foco no bem-estar emocional."
+  },
+  {
+    "id": 2,
+    "name": "Dr. Rafael Souza",
+    "specialty": "Clínico geral",
+    "location": "São Paulo, São Paulo",
+    "description": "Atendimento clínico com foco em cuidado integral, escuta e respeito às necessidades de cada pessoa."
+  },
+  {
+    "id": 3,
+    "name": "Dra. Marina Costa",
+    "specialty": "Nutricionista",
+    "location": "Belo Horizonte, Minas Gerais",
+    "description": "Orientação nutricional individualizada com uma abordagem respeitosa e sem julgamentos."
+  },
+  {
+    "id": 4,
+    "name": "Dr. Lucas Almeida",
+    "specialty": "Psiquiatra",
+    "location": "Curitiba, Paraná",
+    "description": "Atendimento em saúde mental com escuta qualificada e cuidado individualizado."
+  },
+  {
+    "id": 5,
+    "name": "Dra. Juliana Ribeiro",
+    "specialty": "Ginecologista",
+    "location": "Porto Alegre, Rio Grande do Sul",
+    "description": "Cuidado ginecológico baseado em respeito, acolhimento e autonomia."
+  },
+  {
+    "id": 6,
+    "name": "Dr. Felipe Santos",
+    "specialty": "Endocrinologista",
+    "location": "São Paulo, São Paulo",
+    "description": "Acompanhamento endocrinológico individualizado e centrado nas necessidades do paciente."
+  }
+]
