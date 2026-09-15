@@ -176,6 +176,20 @@ Entre as medidas utilizadas:
 
 ---
 
+Validação
+
+Além dos testes automatizados e da auditoria do Lighthouse, foi realizado um teste básico utilizando o NVDA, validando:
+
+* Navegação pelos headings
+* Navegação pelos links e botões
+* Anúncio dos estados do menu mobile
+* Identificação dos campos de busca
+* Abertura e identificação do modal
+* Foco no botão de fechamento
+* Navegação por teclado dentro do modal
+* Fechamento com Escape
+* Retorno do foco ao elemento que abriu o modal
+
 ## Responsividade
 
 O projeto foi desenvolvido seguindo uma abordagem **mobile-first**.
