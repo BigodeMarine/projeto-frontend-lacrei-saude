@@ -6,9 +6,8 @@ O projeto simula uma plataforma para facilitar a busca por profissionais de saú
 
 ## 🔗 Projeto
 
-**Produção:** [disponível através do deploy realizado no Vercel.](https://projeto-frontend-lacrei-saude.vercel.app)
+**Deploy da aplicação:** [Clique Aqui.](https://projeto-frontend-lacrei-saude.vercel.app)
 
-**Repositório:** `https://github.com/BigodeMarine/projeto-frontend-lacrei-saude`
 
 ---
 
