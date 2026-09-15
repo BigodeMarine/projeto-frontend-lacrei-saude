@@ -9,9 +9,9 @@ export const HeaderContainer = styled.header`
 export const HeaderContent = styled.div`
   width: 100%;
   max-width: 1200px;
-  min-height: 72px;
+  min-height: 96px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: 24px;
 
   display: flex;
   align-items: center;
@@ -39,11 +39,17 @@ export const Navigation = styled.nav`
   @media (min-width: 768px) {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
   }
 `;
 
 export const NavigationLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 48px;
+
   color: ${({ theme }) => theme.colors.text.body};
   font-size: 16px;
   font-weight: 700;
@@ -63,6 +69,20 @@ export const NavigationLink = styled.a`
 
   &:active {
     color: ${({ theme }) => theme.colors.text.pressed};
+  }
+
+  @media (min-width: 768px) {
+    &:nth-child(1) {
+      width: 174px;
+    }
+
+    &:nth-child(2) {
+      width: 114px;
+    }
+
+    &:nth-child(3) {
+      width: 141px;
+    }
   }
 `;
 
