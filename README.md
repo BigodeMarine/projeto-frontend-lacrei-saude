@@ -1,306 +1,410 @@
 # Lacrei Saúde — Frontend
 
-Aplicação frontend desenvolvida como desafio técnico inspirado na proposta da **Lacrei Saúde**, com foco em acessibilidade, responsividade, experiência do usuário e performance.
+Aplicação frontend desenvolvida como desafio técnico, com foco em **acessibilidade, responsividade, experiência do usuário e fidelidade ao Marsha Design System**.
 
-O projeto simula uma plataforma para facilitar a busca por profissionais de saúde, utilizando uma interface acolhedora e acessível, com a identidade visual da Lacrei Saúde, seguindo o guia Marsha Design System.
+O projeto simula uma plataforma para busca de profissionais de saúde preparados para oferecer um atendimento acolhedor, respeitoso e seguro.
 
-## 🔗 Projeto
+## Demonstração
 
-**Deploy da aplicação:** [Clique Aqui.](https://projeto-frontend-lacrei-saude.vercel.app)
+**Aplicação publicada:** https://projeto-frontend-lacrei-saude.vercel.app
 
+### Rotas
 
----
+* `/` — página inicial
+* `/buscar` — busca de profissionais
 
-## Objetivo
+A aplicação foi validada tanto localmente quanto no ambiente publicado.
 
-Desenvolver uma aplicação frontend moderna que represente uma experiência de busca por profissionais de saúde, seguindo os princípios visuais e de acessibilidade propostos pela Lacrei Saúde.
+## 🛠️ Tecnologias
 
-O projeto foi desenvolvido considerando:
+* Next.js 16.3.4
+* React 19.2.8
+* TypeScript
+* styled-components 6.5.3
+* Vitest 2.1.9
+* Testing Library
+* ESLint
+* Vercel
+* GitHub Actions
 
-* Design mobile-first
-* Responsividade
-* Acessibilidade
-* Navegação por teclado
-* HTML semântico
-* Componentização
-* Performance
-* SEO
-* Testes automatizados
-* Experiência consistente em diferentes tamanhos de tela
-
----
-
-## Funcionalidades
+## 📋 Funcionalidades
 
 ### Página inicial
 
-* Apresentação da proposta da plataforma
-* Seções informativas
-* Navegação principal
-* Links para busca e demais áreas
-* Layout responsivo
+A página apresenta:
+
+* proposta da plataforma;
+* informações sobre acolhimento, respeito e segurança;
+* chamada para busca de profissionais;
+* navegação para as principais áreas da aplicação.
 
 ### Busca de profissionais
 
-* Listagem de profissionais
-* Busca por nome, especialidade ou localização
-* Feedback para buscas sem resultados
-* Interface responsiva
-* Visualização do perfil do profissional através de modal
+A página `/buscar` permite:
 
-### Modal de profissional
+* visualizar profissionais disponíveis;
+* pesquisar por nome;
+* pesquisar por especialidade;
+* pesquisar por localização;
+* visualizar mensagem quando não existem resultados;
+* abrir o perfil de um profissional;
+* fechar o perfil pelo botão de fechamento;
+* fechar o modal utilizando `Escape`.
 
-* Abertura através do botão "Ver perfil"
-* Fechamento através do botão dedicado
-* Fechamento utilizando `Escape`
-* Controle de foco
-* Retorno do foco para o elemento que abriu o modal
-* Navegação por teclado mantida dentro do modal
+### Estados da aplicação
 
-### Menu mobile
+Foram implementados estados específicos para:
 
-* Menu responsivo
-* Controle através de botão acessível
-* `aria-expanded`
-* `aria-controls`
-* Navegação por teclado
-* Controle de foco ao abrir e fechar
+* **Loading:** `Carregando profissionais...`
+* **Sucesso:** exibição dos profissionais encontrados;
+* **Vazio:** mensagem quando nenhum profissional corresponde à busca;
+* **Erro:** mensagem informando que os profissionais não puderam ser carregados.
 
----
+Os dados são mockados para representar uma futura integração com API.
 
-## Tecnologias
+## Elementos interativos
 
-* **Next.js 16**
-* **React 19**
-* **TypeScript**
-* **Styled Components**
-* **Vitest**
-* **Testing Library**
-* **Material Symbols**
-* **GitHub**
-* **Vercel**
+Os principais elementos interativos utilizados no fluxo são:
 
----
+### Encontrar profissionais
 
-## Estrutura
+Direciona o usuário para a página de busca.
 
-A aplicação foi organizada separando páginas, componentes, estilos, dados e serviços.
+### Ver perfil
 
-```text
-src/
-├── app/
-│   ├── buscar/
-│   │   ├── page.tsx
-│   │   └── page.styles.ts
-│   ├── page.tsx
-│   └── page.styles.ts
-|   |__ layout.tsx
-│
-├── components/
-│   ├── Header/
-│   ├── Footer/
-│   └── ProfessionalModal/
-│
-├── data/
-│   └── professionals.json
-│
-├── services/
-│   └── professionals.ts
-│
-├── styles/
-│   ├── colors.ts
-│   ├── GlobalStyle.ts
-│   ├── StyledComponentsRegistry.tsx
-│   ├── styled.d.ts
-│   ├── theme.ts
-│   └── typography.ts
-│
-└── test/
-    └── render.tsx
-```
+Abre um modal contendo as informações do profissional selecionado.
 
-A separação entre dados e serviços permite que a implementação atual utilizando dados locais possa ser posteriormente substituída por uma API real sem precisar acoplar a página diretamente à fonte dos dados.
+### Fechar
 
----
+Fecha o modal do profissional.
 
-## Service Layer / Mock API
+Além desses controles, a aplicação possui navegação, campo de busca e controles de menu responsivos.
 
-Para simular uma integração com backend, os profissionais são disponibilizados através de uma camada de serviço:
+## 🎨 Marsha Design System
 
-```text
-src/services/professionals.ts
-```
+A interface foi desenvolvida seguindo as referências fornecidas do **Marsha Design System**, priorizando consistência visual, hierarquia de conteúdo e acessibilidade.
 
-A página de busca não acessa diretamente o arquivo JSON.
+### Cores
 
-O fluxo utilizado é:
+Foram utilizados tokens centralizados para manter consistência entre os componentes.
 
-```text
-Buscar página
-      ↓
-Service
-      ↓
-professionals.json
-      ↓
-Resultados
-```
+Principais grupos:
 
-Atualmente o serviço utiliza dados locais, mas sua estrutura foi criada pensando em uma futura substituição por uma API HTTP real.
+* Emerald
+* Green
+* Gray
+* Red
+* Orange
+* Blue
 
----
+Também foram utilizados os gradientes definidos para o projeto:
 
-## Acessibilidade
+* **Primary:** `#018383 → #014687`
+* **Subtle:** `#F5FFFB → #FFFFFF`
+* **Secondary:** `#008392 → #00BC86`
 
-A acessibilidade foi tratada como parte da implementação, e não apenas como uma etapa final de validação.
+Os tokens foram organizados em categorias semânticas:
 
-Entre as medidas utilizadas:
+* `background`
+* `text`
+* `border`
+* `icon`
 
-* HTML semântico
-* Hierarquia correta de headings
-* Labels associados aos campos
-* `aria-label`
-* `aria-expanded`
-* `aria-controls`
-* `aria-live`
-* `role="dialog"`
-* `aria-modal`
-* `aria-labelledby`
-* `aria-describedby`
-* Navegação por teclado
-* Suporte à tecla `Escape`
-* Gerenciamento de foco
-* Retorno do foco após fechamento do modal
-* Contraste adequado
-* Estados de `focus-visible`
+Isso permite utilizar o significado da cor em vez de depender diretamente de valores hexadecimais nos componentes.
 
----
+### Tipografia
 
-Validação
+A hierarquia tipográfica foi organizada para diferenciar:
 
-Além dos testes automatizados e da auditoria do Lighthouse, foi realizado um teste básico utilizando o NVDA, validando:
+* títulos;
+* subtítulos;
+* corpo de texto;
+* textos auxiliares;
+* elementos de formulário.
 
-* Navegação pelos headings
-* Navegação pelos links e botões
-* Anúncio dos estados do menu mobile
-* Identificação dos campos de busca
-* Abertura e identificação do modal
-* Foco no botão de fechamento
-* Navegação por teclado dentro do modal
-* Fechamento com Escape
-* Retorno do foco ao elemento que abriu o modal
+A aplicação prioriza contraste e legibilidade em diferentes tamanhos de tela.
+
+### Espaçamento
+
+Foram seguidas as referências de espaçamento do Marsha Design System.
+
+#### Desktop
+
+* Header → elemento: `48px`
+* Footer → elemento: `64px`
+* Heading com underline → subtitle: `8px`
+* Heading com underline → outro elemento: `24px`
+* Heading sem underline → subtitle: `16px`
+* Heading sem underline → outro elemento: `32px`
+* Parágrafo → parágrafo: `16px`
+* Texto → controles: `32px`
+* Cards: `24px`
+
+#### Mobile
+
+* Heading → underline: `8px`
+* Heading → subtitle: `16px`
+* Heading → outro elemento: `24px`
+* Parágrafo → parágrafo: `16px`
+* Texto → controles: `24px`
+* Cards: `16px`
+
+### Componentes
+
+A interface foi estruturada utilizando componentes reutilizáveis, incluindo:
+
+* Header
+* Footer
+* cards de profissionais
+* modal de profissional
+* elementos de formulário
+* botões
+* ícones
+
+Os ícones utilizam **Material Symbols**, mantendo peso visual consistente.
+
+## ♿ Acessibilidade
+
+A acessibilidade foi tratada como parte da implementação e não apenas como uma validação posterior.
+
+Foram utilizados:
+
+* HTML semântico;
+* hierarquia correta de headings;
+* labels associados aos controles;
+* atributos ARIA quando necessários;
+* `role="alert"` para mensagens de erro;
+* foco visível;
+* navegação por teclado;
+* fechamento do modal com `Escape`;
+* controles acessíveis por leitores de tela;
+* textos alternativos quando aplicáveis.
+
+### Navegação por teclado
+
+O fluxo foi validado utilizando teclado:
+
+* `Tab` para avançar entre elementos;
+* `Shift + Tab` para retornar;
+* `Enter` para ativar controles;
+* `Escape` para fechar o modal;
+* foco visual nos elementos interativos.
+
+### Teste com NVDA
+
+O fluxo de busca e abertura do perfil foi validado utilizando o leitor de tela **NVDA**.
+
+Durante o teste:
+
+* o nome do profissional foi anunciado;
+* a descrição do profissional foi anunciada;
+* o controle de fechamento do modal foi identificado como **"Fechar, botão"**.
+
+O teste também foi registrado em vídeo como evidência.
 
 ## Responsividade
 
-O projeto foi desenvolvido seguindo uma abordagem **mobile-first**.
+A interface foi desenvolvida com abordagem **mobile-first** e validada nos seguintes formatos:
 
-Foram considerados diferentes tamanhos de tela para:
+* Mobile
+* Tablet
+* Desktop
 
-* Header
-* Menu mobile
-* Hero
-* Formulário de busca
-* Cards de profissionais
-* Modal
-* Footer
+A adaptação contempla:
 
-O layout utiliza breakpoints para adaptar a quantidade de colunas e espaçamentos conforme o tamanho da tela.
+* Header responsivo;
+* navegação;
+* cards;
+* formulário de busca;
+* modal;
+* espaçamentos;
+* organização do conteúdo.
 
----
-
-## Performance
-
-A performance foi uma das partes mais importantes do desenvolvimento.
-
-Durante a implementação, a aplicação chegou a apresentar uma pontuação de aproximadamente **75 no Lighthouse**, principalmente devido ao carregamento dos ícones através da fonte do Material Symbols.
-
-### Problema identificado
-
-Inicialmente, os ícones eram carregados através de uma fonte externa, adicionando recursos ao carregamento inicial da aplicação.
-
-Além do impacto no carregamento, o recurso externo também poderia contribuir para bloqueios durante a renderização.
-
-### Solução
-
-EU adotei uma abordagem de otimização utilizando uma versão local e reduzida da fonte.
-
-Foi utilizado `pyftsubset` para gerar um subset contendo apenas os ícones realmente utilizados pela aplicação.
-
-A fonte original possuía aproximadamente **5,37 MB**, enquanto a versão reduzida ficou em aproximadamente **254 KB**.
-
-O resultado foi uma redução significativa no recurso carregado pelo navegador.
-
-A aplicação passou a utilizar a fonte local:
+As evidências visuais estão disponíveis no diretório:
 
 ```text
-public/fonts/material-symbols-rounded.woff2
+docs/
+└── responsive/
+    ├── mobile.png
+    ├── tablet.png
+    └── desktop.png
 ```
 
-E os ícones passaram a ser declarados através de `@font-face`.
+## 🔎 Lighthouse
 
-Essa alteração eliminou a dependência da fonte externa para os ícones e melhorou significativamente a performance.
+A aplicação foi avaliada utilizando Lighthouse.
 
----
+### Mobile
 
-## Lighthouse
-
-Resultado final validado em produção, utilizando a versão mobile:
-
-| Categoria      | Resultado |
+| Métrica        | Resultado |
 | -------------- | --------: |
 | Performance    |    **99** |
 | Accessibility  |   **100** |
 | Best Practices |   **100** |
 | SEO            |   **100** |
 
-O objetivo não foi apenas alcançar uma pontuação alta, mas identificar problemas reais e melhorar a aplicação com base nos resultados das ferramentas de auditoria.
+![Resultado do Lighthouse Mobile](./docs/lighthouse/Mobile(2).png)
 
----
+### Desktop
 
-## Testes
+| Métrica        | Resultado |
+| -------------- | --------: |
+| Performance    |   **100** |
+| Accessibility  |   **100** |
+| Best Practices |   **100** |
+| SEO            |   **100** |
 
-Foram implementados testes automatizados utilizando **Vitest** e **Testing Library**.
+Os requisitos mínimos definidos para o desafio foram atingidos:
 
-Atualmente existem testes para:
+* Accessibility ≥ 90
+* Performance ≥ 80
 
-* Header
-* Footer
-* ProfessionalModal
+As evidências estão disponíveis em:
 
-Os testes validam comportamentos importantes da aplicação, incluindo:
-
-* Renderização dos elementos
-* Navegação
-* Abertura e fechamento do menu mobile
-* Estados ARIA
-* Abertura do modal
-* Foco no modal
-* Fechamento através de `Escape`
-
-Para executar os testes:
-
-```bash
-npm run test
+```text
+docs/
+└── lighthouse/
+    ├── mobile.png
+    └── desktop.png
 ```
 
----
+## 🧪 Testes
+
+O projeto utiliza **Vitest** e **Testing Library**.
+
+No estado atual:
+
+```text
+Test Files: 4 passed
+Tests:      15 passed
+```
+
+Os testes cobrem:
+
+* carregamento dos profissionais;
+* listagem;
+* busca por nome;
+* busca por especialidade;
+* busca por localização;
+* ausência de resultados;
+* limpeza da busca;
+* abertura do modal;
+* fechamento do modal;
+* fechamento com `Escape`;
+* estado de erro;
+* Header;
+* Footer;
+* ProfessionalModal.
+
+### Cobertura
+
+| Métrica    |  Cobertura |
+| ---------- | ---------: |
+| Statements | **64.14%** |
+| Branches   | **91.45%** |
+| Functions  | **84.37%** |
+| Lines      | **64.14%** |
+
+A cobertura global inclui arquivos de configuração e infraestrutura que não possuem comportamento diretamente testável, enquanto os principais fluxos de interface possuem cobertura elevada.
+
+## ⚙️ CI — GitHub Actions
+
+O projeto possui um workflow de CI executado para alterações na branch principal e Pull Requests.
+
+O pipeline executa:
+
+1. Checkout do repositório;
+2. configuração do Node.js 22;
+3. instalação das dependências com `npm ci`;
+4. lint;
+5. testes;
+6. build de produção.
+
+Comandos utilizados pelo pipeline:
+
+```bash
+npm ci
+npm run lint
+npm test -- --run
+npm run build
+```
+
+O workflow foi executado com sucesso no GitHub Actions.
+
+## 🧠 Decisões técnicas
+
+### Next.js
+
+Utilizado para estruturar a aplicação React, organizar as rotas e permitir uma estrutura adequada para uma aplicação frontend moderna.
+
+### React
+
+Utilizado para construção de componentes reutilizáveis e gerenciamento dos estados da interface.
+
+### TypeScript
+
+Utilizado para tipagem estática, principalmente nos dados dos profissionais, propriedades dos componentes e integração com o tema.
+
+### styled-components
+
+Escolhido para manter os estilos próximos aos componentes e permitir a utilização dos tokens do Design System através do `ThemeProvider`.
+
+### Dados mockados
+
+Os profissionais são fornecidos através de dados locais.
+
+A camada de serviço foi mantida separada da página para representar uma futura integração com API sem acoplar a interface diretamente à origem dos dados.
+
+### Vitest + Testing Library
+
+Utilizados para testar o comportamento da interface a partir da perspectiva do usuário, incluindo interações e estados da aplicação.
+
+## ⚠️ Limitações conhecidas
+
+Este projeto é uma implementação frontend para fins de desafio técnico.
+
+Atualmente:
+
+* os profissionais são dados mockados;
+* não existe backend próprio;
+* não existe autenticação real;
+* não existe persistência de dados;
+* a busca não consulta uma API externa;
+* os estados de loading e erro simulam o comportamento esperado de uma integração futura.
+
+Essas decisões mantêm o escopo do desafio concentrado na experiência frontend, acessibilidade e qualidade da interface.
+
+## 🔄 Rollback
+
+O deploy é realizado através da Vercel.
+
+Cada alteração publicada gera uma nova versão do projeto, permitindo retornar para uma implantação anterior através do histórico de deployments da plataforma.
+
+Em caso de regressão:
+
+1. identificar a versão estável anterior;
+2. selecionar o deployment correspondente;
+3. promover a versão anterior;
+4. corrigir o problema em uma nova alteração;
+5. executar novamente o CI antes de uma nova publicação.
 
 ## Executando localmente
 
 ### Pré-requisitos
 
-* Node.js
-* npm
-* Git
+* Node.js 22 ou compatível;
+* npm;
+* Git.
 
 ### Instalação
 
-Clone o repositório:
+Clone o projeto:
 
 ```bash
-git clone https://github.com/BigodeMarine/projeto-frontend-lacrei-saude.git
+git clone <URL_DO_REPOSITORIO>
 ```
 
-Entre no projeto:
+Entre no diretório:
 
 ```bash
 cd projeto-frontend-lacrei-saude
@@ -312,87 +416,102 @@ Instale as dependências:
 npm install
 ```
 
-Execute o ambiente de desenvolvimento:
+Execute em desenvolvimento:
 
 ```bash
 npm run dev
 ```
 
-A aplicação estará disponível localmente em:
+A aplicação estará disponível em:
 
 ```text
 http://localhost:3000
 ```
 
----
+### Testes
 
-## Build de produção
+Executar os testes:
 
-Para gerar a build:
+```bash
+npm test
+```
+
+Executar uma vez:
+
+```bash
+npm test -- --run
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+### Build
 
 ```bash
 npm run build
 ```
 
-Para executar a aplicação em modo de produção:
-
-```bash
-npm run start
-```
-
----
-
-## Deploy
-
-O projeto foi publicado utilizando **Vercel**, com integração ao repositório GitHub.
-
-O fluxo utilizado é:
+## 📁 Estrutura principal
 
 ```text
-GitHub
-   ↓
-Vercel
-   ↓
-Build Next.js
-   ↓
-Deploy
-   ↓
-Produção
+src/
+├── app/
+│   ├── buscar/
+│   │   ├── page.tsx
+│   │   ├── page.styles.ts
+│   │   └── page.test.tsx
+│   ├── login/
+│   ├── page.tsx
+│   └── ...
+│
+├── components/
+│   ├── Footer/
+│   ├── Header/
+│   ├── ProfessionalModal/
+│   └── ...
+│
+├── data/
+│   └── professionals.json
+│
+├── services/
+│   └── professionals.ts
+│
+├── styles/
+│   ├── colors.ts
+│   ├── theme.ts
+│   ├── styled.d.ts
+│   └── ...
+│
+└── test/
+    └── render.tsx
+
+docs/
+├── accessibility/
+│   └── nvda-modal.mp4
+├── lighthouse/
+│   ├── mobile.png
+│   └── desktop.png
+└── responsive/
+    ├── mobile.png
+    ├── tablet.png
+    └── desktop.png
 ```
 
-Cada atualização do projeto pode ser versionada através do Git e posteriormente publicada através do pipeline de deploy da plataforma.
+## 📌 Status
 
----
+Projeto concluído com:
 
-## Principais decisões técnicas
-
-### Next.js
-
-Escolhido pela estrutura baseada em React, para otimizações de produção e facilidade de deploy.
-
-### TypeScript
-
-Utilizado para aumentar a segurança durante o desenvolvimento e facilitar a manutenção através da tipagem dos dados e componentes.
-
-### Styled Components
-
-Utilizado para manter os estilos próximos aos componentes e permitir a criação de um sistema de design baseado em tokens.
-
-### Service Layer
-
-A camada de serviços separa a interface da fonte dos dados. Dessa forma, a implementação atual com JSON pode posteriormente ser substituída por uma API real com menor impacto na interface.
-
-### Testes automatizados
-
-Vitest e Testing Library foram utilizados para validar comportamentos importantes da aplicação, especialmente aqueles relacionados à interação e acessibilidade.
-
-### Material Symbols otimizado
-
-Em vez de manter uma fonte de ícones completa ou depender exclusivamente de um recurso externo, foi utilizada uma versão subset da fonte contendo somente os ícones necessários.
-
----
-
-## Autor
-
-**Edson Luiz Garcia Portela**
-
+* ✅ Interface responsiva
+* ✅ Marsha Design System
+* ✅ Acessibilidade
+* ✅ Testes automatizados
+* ✅ Cobertura de testes
+* ✅ Lighthouse
+* ✅ Teste com NVDA
+* ✅ Estados de loading, sucesso, vazio e erro
+* ✅ CI com GitHub Actions
+* ✅ Build de produção
+* ✅ Deploy na Vercel
