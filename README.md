@@ -238,12 +238,12 @@ A aplicação foi avaliada utilizando Lighthouse.
 
 | Métrica        | Resultado |
 | -------------- | --------: |
-| Performance    |    **99** |
+| Performance    |    **97** |
 | Accessibility  |   **100** |
 | Best Practices |   **100** |
 | SEO            |   **100** |
 
-![Resultado do Lighthouse Mobile](./docs/lighthouse/Mobile(2).png)
+![Resultado do Lighthouse Mobile](./docs/lighthouse/Mobile.png)
 
 ### Desktop
 
@@ -254,10 +254,7 @@ A aplicação foi avaliada utilizando Lighthouse.
 | Best Practices |   **100** |
 | SEO            |   **100** |
 
-Os requisitos mínimos definidos para o desafio foram atingidos:
-
-* Accessibility ≥ 90
-* Performance ≥ 80
+![Resultado do Lighthouse Desktop](./docs/lighthouse/Desktop.png)
 
 As evidências estão disponíveis em:
 
@@ -463,15 +460,15 @@ src/
 │   │   ├── page.tsx
 │   │   ├── page.styles.ts
 │   │   └── page.test.tsx
-│   ├── login/
+│   ├── layout.tsx
 │   ├── page.tsx
-│   └── ...
+│   └── page.styles.ts
 │
 ├── components/
 │   ├── Footer/
 │   ├── Header/
-│   ├── ProfessionalModal/
-│   └── ...
+│   └── ProfessionalModal/
+│    
 │
 ├── data/
 │   └── professionals.json
@@ -484,7 +481,7 @@ src/
 │   ├── theme.ts
 │   ├── styled.d.ts
 │   └── ...
-│
+│   
 └── test/
     └── render.tsx
 
@@ -492,12 +489,12 @@ docs/
 ├── accessibility/
 │   └── nvda-modal.mp4
 ├── lighthouse/
-│   ├── mobile.png
-│   └── desktop.png
+│   ├── Mobile.png
+│   └── Desktop.png
 └── responsive/
-    ├── mobile.png
-    ├── tablet.png
-    └── desktop.png
+    ├── Mobile.png
+    ├── Tablet.png
+    └── Desktop.png
 ```
 
 ## 📌 Status
