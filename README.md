@@ -200,15 +200,23 @@ Durante o teste:
 * a descrição do profissional foi anunciada;
 * o controle de fechamento do modal foi identificado como **"Fechar, botão"**.
 
-O teste também foi registrado em vídeo como evidência.[▶️ Assistir ao teste de acessibilidade com NVDA](./docs/acessibilidade/nvda-modal.mp4)
+O teste também foi registrado em vídeo como evidência.
+
+[![Teste de acessibilidade com NVDA](./docs/acessibilidade/nvda-modal.png)](./docs/acessibilidade/nvda-modal.mp4)
+
+*Clique na imagem para assistir ao vídeo do teste.*
+
 
 ## Responsividade
 
 A interface foi desenvolvida com abordagem **mobile-first** e validada nos seguintes formatos:
 
 * Mobile
+![Resultado do responsividade Mobile](./docs/responsividade/Mobile.png)
 * Tablet
+![Resultado do responsividade Desktop](./docs/responsividade/Desktop.png)
 * Desktop
+![Resultado do responsividade Tablet](./docs/responsividade/Tablet.png)
 
 A adaptação contempla:
 
