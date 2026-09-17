@@ -200,7 +200,7 @@ Durante o teste:
 * a descrição do profissional foi anunciada;
 * o controle de fechamento do modal foi identificado como **"Fechar, botão"**.
 
-O teste também foi registrado em vídeo como evidência.
+O teste também foi registrado em vídeo como evidência.[▶️ Assistir ao teste de acessibilidade com NVDA](.docs/acessibilidade/nvda-modal.mp4)
 
 ## Responsividade
 
