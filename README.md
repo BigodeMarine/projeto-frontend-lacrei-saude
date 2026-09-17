@@ -213,9 +213,9 @@ A interface foi desenvolvida com abordagem **mobile-first** e validada nos segui
 
 * Mobile  
 ![Resultado do responsividade Mobile](./docs/responsividade/Mobile.png)  
-* Tablet  
-![Resultado do responsividade Desktop](./docs/responsividade/Desktop.png)  
 * Desktop  
+![Resultado do responsividade Desktop](./docs/responsividade/Desktop.png)  
+* Tablet  
 ![Resultado do responsividade Tablet](./docs/responsividade/Tablet.png)  
  
 A adaptação contempla:
