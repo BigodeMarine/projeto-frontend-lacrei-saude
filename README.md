@@ -202,7 +202,7 @@ Durante o teste:
 
 O teste também foi registrado em vídeo como evidência.
 
-[![Teste de acessibilidade com NVDA](./docs/acessibilidade/nvda-modal.png)](./docs/acessibilidade/nvda-modal.mp4)
+[![Teste de acessibilidade com NVDA](./docs/acessibilidade/nvda-modal.png)](https://www.youtube.com/watch?v=Nf4Ke0c1Kzc)
 
 *Clique na imagem para assistir ao vídeo do teste.*
 
