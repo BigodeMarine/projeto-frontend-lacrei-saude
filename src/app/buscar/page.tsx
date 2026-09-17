@@ -23,7 +23,6 @@ import {
   SearchInput,
   SearchLabel,
   SearchSection,
-  SearchTitle,
 } from './page.styles';
 import { useEffect, FormEvent, useState } from 'react';
 import {
