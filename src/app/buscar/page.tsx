@@ -36,6 +36,7 @@ import {
 export default function BuscarPage() {
 
   const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const [selectedProfessional, setSelectedProfessional] =
     useState<Professional | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -44,11 +45,16 @@ export default function BuscarPage() {
 
   useEffect(() => {
     async function loadProfessionals() {
-      const data = await getProfessionals();
+      try {
+        const data = await getProfessionals();
 
-      setAllProfessionals(data);
-      setSearchResults(data);
-      setIsLoading(false);
+        setAllProfessionals(data);
+        setSearchResults(data);
+      } catch {
+        setHasError(true);
+      } finally {
+        setIsLoading(false);
+      }
     }
 
     loadProfessionals();
@@ -122,6 +128,10 @@ export default function BuscarPage() {
             </ResultsHeader>
             {isLoading ? (
               <p>Carregando profissionais...</p>
+            ) : hasError ? (
+              <p role="alert">
+                Não foi possível carregar os profissionais. Tente novamente.
+              </p>
             ) : (
               <ResultsGrid>
                 {searchResults.map((professional) => (
