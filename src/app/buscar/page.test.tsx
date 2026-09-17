@@ -37,7 +37,7 @@ describe('BuscarPage', () => {
 
   it('exibe o estado de carregamento inicialmente', () => {
     vi.mocked(getProfessionals).mockReturnValue(
-      new Promise(() => {}),
+      new Promise(() => { }),
     );
 
     renderWithTheme(<BuscarPage />);
@@ -242,6 +242,20 @@ describe('BuscarPage', () => {
     await waitFor(() => {
       expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     });
+  });
+
+  it('exibe mensagem de erro quando não consegue carregar os profissionais', async () => {
+    vi.mocked(getProfessionals).mockRejectedValue(
+      new Error('Erro ao carregar profissionais'),
+    );
+
+    renderWithTheme(<BuscarPage />);
+
+    expect(
+      await screen.findByRole('alert'),
+    ).toHaveTextContent(
+      'Não foi possível carregar os profissionais. Tente novamente.',
+    );
   });
 });
 
