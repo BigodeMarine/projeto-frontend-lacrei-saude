@@ -398,7 +398,7 @@ Em caso de regressão:
 Clone o projeto:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone (https://github.com/BigodeMarine/projeto-frontend-lacrei-saude.git)
 ```
 
 Entre no diretório:
